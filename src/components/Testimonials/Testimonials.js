@@ -42,7 +42,7 @@ function Testimonials() {
         <>
             {testimonialsData.length > 0 && (
                 <div
-                    className='testimonials'
+                    className='testimonials' id='testimonials'
                     style={{ backgroundColor: theme.primary }}
                 >
                     <div className='testimonials--header'>
@@ -71,7 +71,7 @@ function Testimonials() {
                                                         theme.secondary,
                                                 }}
                                             >
-                                                <img
+                                                <img style={{ borderRadius: '50%' }}
                                                     src={test.image}
                                                     alt={test.name}
                                                 />
@@ -82,7 +82,15 @@ function Testimonials() {
                                                     backgroundColor:
                                                         theme.secondary,
                                                     color: theme.tertiary,
+                                                    cursor: "pointer"
                                                 }}
+                                                title="Go to LinkedIn recommendations"
+                                                onClick={() =>
+                                                    window.open(
+                                                        "https://www.linkedin.com/in/riccardo-fachin/details/recommendations/?detailScreenTabIndex=0",
+                                                        "_blank"
+                                                    )
+                                                }
                                             >
                                                 <p>{test.text}</p>
                                                 <h1>{test.name}</h1>
